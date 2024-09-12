@@ -1,27 +1,26 @@
-/*Ex3: Crie um algoritmo usando funções que faça uma leitura de 10 letras em um vetor, e após verificar 
-quantas vogais foram lidas e mostre somente consoantes no alerta.*/
-
 function lerLetras() {
-    let msg = "";
     let letras = [];
-    let cont = 0;
+    let msgConsoantes = "";
+    let msgVogais = "";
+    let contVogais = 0;
+    const vogais = ["A", "E", "I", "O", "U"];
     
     for (let i = 0; i < 10; i++) {
-        let val = prompt("Informe a letra");
-        letras[i] = val;
+        let val = prompt("Informe a letra").toUpperCase();
+        letras.push(val);
     }
     
-    for (let j = 0; j < 10; j++) {
-        let val = letras[j].toUpperCase();
-        if (!(val == "A" || val == "E" || val == "I" || val == "O" || val == "U")) {
-            cont++;
-            msg += val + "\n";
+    for (let letra of letras) {
+        if (vogais.includes(letra)) {
+            contVogais++;
+            msgVogais += letra + "\n";
+        } else {
+            msgConsoantes += letra + "\n";
         }
     }
     
-    alert(msg + "Consoantes: " + cont);
+    alert("Consoantes:\n" + msgConsoantes + "Total de Vogais: " + contVogais);
+    
 }
 
 lerLetras();
-
-console.log(lerLetras)
