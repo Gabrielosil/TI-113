@@ -7,6 +7,7 @@ armazene-os numa lista de números, considere as premissas abaixo:
 
 let numeros = [];
 
+
 function menuCadastro() {
     let quantidade;
     while (true) {
